@@ -1,0 +1,61 @@
+name: spryagatel
+description: A Russian verb conjugator.
+publish_to: 'none'
+version: 0.0.1+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">2.2.0 < 3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  arb_generator: ^0.0.1
+  flutter_analysis_options:
+    git:
+      url: https://github.com/defuncart/flutter_analysis_options
+  flutter_pseudolocalizor:
+    git:
+      url: https://github.com/defuncart/flutter_pseudolocalizor
+      ref: main
+  intl_utils: #^2.3.0
+    git:
+      url: https://github.com/defuncart/fork_intl_utils
+      ref: feature/ignore-avoid_catches_without_on_clauses-always_use_package_imports-generated-code
+
+flutter:
+  uses-material-design: true
+
+arb_generator:
+  input_filepath: "assets_dev/loca/loca.csv"
+  output_directory: "assets_dev/l10n"
+  filename_prepend: "intl_"
+  csv_settings:
+    delimiter: ";"
+    description_index: 1
+    base_index: 2
+
+flutter_pseudolocalizor:
+  input_filepath: "assets_dev/l10n/intl_en.arb"
+  replace_base: false
+  use_brackets: true
+  text_expansion_format: 'repeatVowels'
+  text_expansion_ratio: null
+  languages_to_generate:
+    - de
+  arb_settings:
+    output_directory: 'assets_dev/l10n_pseudo'
+
+flutter_intl:
+  enabled: true
+  class_name: AppLocalizations
+  main_locale: en
+  arb_dir: assets_dev/l10n_pseudo
+  output_dir: lib/generated

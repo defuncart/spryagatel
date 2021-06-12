@@ -1,0 +1,7 @@
+{
+  "@@locale": "de",
+  "helloWorld": "[Heeeellöö Wöörld!]",
+  "@helloWorld": {
+    "description": "test"
+  }
+}
