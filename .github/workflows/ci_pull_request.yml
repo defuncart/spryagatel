@@ -52,7 +52,7 @@ jobs:
           channel: 'stable'
       - name: Build app
         run:
-          flutter build ios --release
+          flutter build ios --release --no-codesign
   build-Android:
     name: Build Android
     runs-on: ubuntu-latest
