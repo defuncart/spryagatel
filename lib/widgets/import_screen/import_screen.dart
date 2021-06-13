@@ -3,7 +3,6 @@ import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:spryagatel/services/database_importer.dart';
 import 'package:spryagatel/widgets/home_screen/home_screen.dart';
 
@@ -19,15 +18,13 @@ class _ImportScreenState extends State<ImportScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Builder(
-          builder: (context) => Center(
-            child: ElevatedButton(
-              onPressed: () async {
-                _ModalProgressIndicator.show(context);
-                await _initIsolate();
-              },
-              child: const Text('Import'),
-            ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () async {
+              _ModalProgressIndicator.show(context);
+              await _initIsolate();
+            },
+            child: const Text('Import'),
           ),
         ),
       ),
@@ -65,13 +62,8 @@ class _ImportScreenState extends State<ImportScreen> {
   }
 
   Future<void> _createDatabase(List<List<String>> rows) async {
-    final docPath = (await getApplicationDocumentsDirectory()).path;
-    final downloadsPath = (await getExternalStorageDirectory())!.path;
-
     await DatabaseImporter.generate(
       rows: rows,
-      docPath: docPath,
-      downloadsPath: downloadsPath,
     );
 
     _ModalProgressIndicator.dismiss();

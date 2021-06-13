@@ -25,8 +25,6 @@ abstract class DatabaseImporter {
 
   static Future<void> generate({
     required List<List<String>> rows,
-    required String docPath,
-    required String downloadsPath,
   }) async {
     final isar = await Isar.open(
       schemas: [VerbSchema],
