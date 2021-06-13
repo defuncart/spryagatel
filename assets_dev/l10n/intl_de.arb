@@ -1,8 +1,8 @@
 {
   "@@locale": "de",
-  "helloWorld": "Hallo Welt!",
-  "@helloWorld": {
-    "description": "test"
+  "homeScreenInfoText": "{count, plural, zero{There are no verbs} one{There is 1 verb} other{There are {count} verbs}}",
+  "@homeScreenInfoText": {
+    "description": "Info text"
   },
   "importScreenButtonText": "Import",
   "@importScreenButtonText": {

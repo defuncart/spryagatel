@@ -17,6 +17,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int? _numberVerbs;
+
   @override
   void initState() {
     super.initState();
@@ -29,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       );
 
       final verbs = await isar.verbs.where().findAll();
-      print(verbs.length);
+      setState(() => _numberVerbs = verbs.length);
     });
   }
 
@@ -40,7 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Спрягатель'),
       ),
       body: Center(
-        child: Text(AppLocalizations.of(context).helloWorld),
+        child: Text(
+          _numberVerbs != null ? AppLocalizations.of(context).homeScreenInfoText(_numberVerbs!) : '',
+        ),
       ),
     );
   }

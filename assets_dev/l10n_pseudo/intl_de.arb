@@ -1,8 +1,8 @@
 {
   "@@locale": "de",
-  "helloWorld": "[Heeeellöö Wöörld!]",
-  "@helloWorld": {
-    "description": "test"
+  "homeScreenInfoText": "{count, plural, zero{[Theeeeree aaree nöö veerßs]} one{[Theeeeree iis 1 veerß]} other{[Theeeereee aare {count} veeeerßs]}}",
+  "@homeScreenInfoText": {
+    "description": "Info text"
   },
   "importScreenButtonText": "[IIImpöört]",
   "@importScreenButtonText": {

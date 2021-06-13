@@ -20,10 +20,12 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
+  static String m0(count) =>
+      "${Intl.plural(count, zero: '[Theeeeree aaree nöö veerßs]', one: '[Theeeeree iis 1 veerß]', other: '[Theeeereee aare ${count} veeeerßs]')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "helloWorld":
-            MessageLookupByLibrary.simpleMessage("[Heeeellöö Wöörld!]"),
+        "homeScreenInfoText": m0,
         "importScreenButtonText":
             MessageLookupByLibrary.simpleMessage("[IIImpöört]"),
         "importScreenHeadlineText": MessageLookupByLibrary.simpleMessage(

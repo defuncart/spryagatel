@@ -50,13 +50,16 @@ class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  /// `Hello World!`
-  String get helloWorld {
-    return Intl.message(
-      'Hello World!',
-      name: 'helloWorld',
-      desc: 'test',
-      args: [],
+  /// `{count, plural, zero{There are no verbs} one{There is 1 verb} other{There are {count} verbs}}`
+  String homeScreenInfoText(num count) {
+    return Intl.plural(
+      count,
+      zero: 'There are no verbs',
+      one: 'There is 1 verb',
+      other: 'There are $count verbs',
+      name: 'homeScreenInfoText',
+      desc: 'Info text',
+      args: [count],
     );
   }
 
