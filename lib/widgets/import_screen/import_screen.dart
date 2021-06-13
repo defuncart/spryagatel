@@ -3,6 +3,7 @@ import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:spryagatel/generated/l10n.dart';
 import 'package:spryagatel/services/database_importer.dart';
 import 'package:spryagatel/widgets/home_screen/home_screen.dart';
 
@@ -18,13 +19,34 @@ class _ImportScreenState extends State<ImportScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () async {
-              _ModalProgressIndicator.show(context);
-              await _initIsolate();
-            },
-            child: const Text('Import'),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                AppLocalizations.of(context).importScreenHeadlineText,
+                style: Theme.of(context).textTheme.headline5,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                AppLocalizations.of(context).importScreenSubheadlineText,
+                style: Theme.of(context).textTheme.headline6,
+              ),
+              const SizedBox(height: 8),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () async {
+                    _ModalProgressIndicator.show(context);
+                    await _initIsolate();
+                  },
+                  child: Text(
+                    AppLocalizations.of(context).importScreenButtonText,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

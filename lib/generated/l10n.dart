@@ -59,6 +59,36 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Import`
+  String get importScreenButtonText {
+    return Intl.message(
+      'Import',
+      name: 'importScreenButtonText',
+      desc: 'Import button text on import screen',
+      args: [],
+    );
+  }
+
+  /// `Before first use, the database needs to be imported. Do you want to continue?`
+  String get importScreenHeadlineText {
+    return Intl.message(
+      'Before first use, the database needs to be imported. Do you want to continue?',
+      name: 'importScreenHeadlineText',
+      desc: 'Headline text on import screen',
+      args: [],
+    );
+  }
+
+  /// `This will roughly take 2 minutes.`
+  String get importScreenSubheadlineText {
+    return Intl.message(
+      'This will roughly take 2 minutes.',
+      name: 'importScreenSubheadlineText',
+      desc: 'Sub-headline text on import screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

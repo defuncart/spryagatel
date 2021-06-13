@@ -23,6 +23,12 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "helloWorld":
-            MessageLookupByLibrary.simpleMessage("[Heeeellöö Wöörld!]")
+            MessageLookupByLibrary.simpleMessage("[Heeeellöö Wöörld!]"),
+        "importScreenButtonText":
+            MessageLookupByLibrary.simpleMessage("[IIImpöört]"),
+        "importScreenHeadlineText": MessageLookupByLibrary.simpleMessage(
+            "[ẞeefööree fiirst üüsee, thee daataaßaasee neeeeds töö ßee iimpöörteed. Döö yööüü waant töö cööntinüe?]"),
+        "importScreenSubheadlineText": MessageLookupByLibrary.simpleMessage(
+            "[Thiiis wiill rööüüghly taakee 2 miinüütees.]")
       };
 }

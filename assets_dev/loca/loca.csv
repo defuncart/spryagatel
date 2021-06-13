@@ -1,2 +1,5 @@
 key;description;en;de
 helloWorld;test;Hello World!;Hallo Welt!
+importScreenHeadlineText;Headline text on import screen;Before first use, the database needs to be imported. Do you want to continue?;
+importScreenSubheadlineText;Sub-headline text on import screen;This will roughly take 2 minutes.;
+importScreenButtonText;Import button text on import screen;Import;

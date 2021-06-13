@@ -3,5 +3,17 @@
   "helloWorld": "[Heeeellöö Wöörld!]",
   "@helloWorld": {
     "description": "test"
+  },
+  "importScreenButtonText": "[IIImpöört]",
+  "@importScreenButtonText": {
+    "description": "Import button text on import screen"
+  },
+  "importScreenHeadlineText": "[ẞeefööree fiirst üüsee, thee daataaßaasee neeeeds töö ßee iimpöörteed. Döö yööüü waant töö cööntinüe?]",
+  "@importScreenHeadlineText": {
+    "description": "Headline text on import screen"
+  },
+  "importScreenSubheadlineText": "[Thiiis wiill rööüüghly taakee 2 miinüütees.]",
+  "@importScreenSubheadlineText": {
+    "description": "Sub-headline text on import screen"
   }
 }

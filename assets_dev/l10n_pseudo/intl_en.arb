@@ -3,5 +3,17 @@
   "helloWorld": "Hello World!",
   "@helloWorld": {
     "description": "test"
+  },
+  "importScreenButtonText": "Import",
+  "@importScreenButtonText": {
+    "description": "Import button text on import screen"
+  },
+  "importScreenHeadlineText": "Before first use, the database needs to be imported. Do you want to continue?",
+  "@importScreenHeadlineText": {
+    "description": "Headline text on import screen"
+  },
+  "importScreenSubheadlineText": "This will roughly take 2 minutes.",
+  "@importScreenSubheadlineText": {
+    "description": "Sub-headline text on import screen"
   }
 }
