@@ -4,7 +4,7 @@ A Russian verb conjugator.
 
 ## Credits
 
-Thanks to [CoreRussianVerbs](https://github.com/StorkST/CoreRussianVerbs) [russian-dictionary](https://github.com/Badestrand/russian-dictionary) which are used for the verb database.
+Thanks to [russian-dictionary](https://github.com/Badestrand/russian-dictionary) which is used for the verb database. [CoreRussianVerbs](https://github.com/StorkST/CoreRussianVerbs) is another great database for A1-B1 verbs.
 
 ## Raising Issues and Contributing
 

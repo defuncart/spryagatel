@@ -28,6 +28,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+   - assets/db/verbs.csv
 
 arb_generator:
   input_filepath: "assets_dev/loca/loca.csv"
