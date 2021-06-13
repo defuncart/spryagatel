@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:spryagatel/services/database_importer.dart';
+import 'package:spryagatel/widgets/home_screen/home_screen.dart';
 
 class ImportScreen extends StatefulWidget {
   const ImportScreen({Key? key}) : super(key: key);
@@ -74,6 +75,9 @@ class _ImportScreenState extends State<ImportScreen> {
     );
 
     _ModalProgressIndicator.dismiss();
+    Future.microtask(
+      () => Navigator.of(context).pushReplacementNamed(HomeScreen.routeName),
+    );
   }
 
   static void _myIsolate(List<Object> arguments) async {

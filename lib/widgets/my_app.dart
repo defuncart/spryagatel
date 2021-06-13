@@ -40,16 +40,23 @@ class _MyAppState extends State<MyApp> {
         future: _isInitializedFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return snapshot.data! ? const HomeScreen() : const ImportScreen();
+            if (snapshot.data == null || snapshot.data == false) {
+              return const ImportScreen();
+            } else {
+              Future.microtask(
+                () => Navigator.of(context).pushReplacementNamed(HomeScreen.routeName),
+              );
+            }
           }
 
-          return const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
-            ),
+          return Scaffold(
+            body: Container(),
           );
         },
       ),
+      routes: {
+        HomeScreen.routeName: (_) => const HomeScreen(),
+      },
     );
   }
 
