@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer' show log;
 import 'dart:isolate';
 
 import 'package:flutter/material.dart';
@@ -66,10 +67,10 @@ class _ImportScreenState extends State<ImportScreen> {
           _createDatabase(data);
           isolate.kill();
         } else {
-          print('[isolateToMainStream] $data');
+          log('[isolateToMainStream] $data');
         }
       },
-      onDone: () => print('done!'),
+      onDone: () => log('done!'),
     );
 
     // load db contents from rootBundle as platform methods do not work in isolates
@@ -101,7 +102,7 @@ class _ImportScreenState extends State<ImportScreen> {
 
     final csvString = arguments[1] as String;
     mainToIsolateStream.listen((data) {
-      print('[mainToIsolateStream] $data');
+      log('[mainToIsolateStream] $data');
     });
 
     final rows = await DatabaseImporter.parse(

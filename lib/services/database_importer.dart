@@ -1,3 +1,5 @@
+import 'dart:developer' show log;
+
 import 'package:csv/csv.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
@@ -13,12 +15,12 @@ abstract class DatabaseImporter {
     final rows = await _csvRows(csvString, fieldDelimiter: '	');
     for (final row in rows) {
       if (row.length != 18) {
-        print('${row.first} has ${row.length} elements!');
+        log('${row.first} has ${row.length} elements!');
       }
     }
     rows.removeAt(0);
 
-    print('CSV file imported...');
+    log('CSV file imported...');
 
     return rows;
   }

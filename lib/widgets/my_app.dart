@@ -62,7 +62,6 @@ class _MyAppState extends State<MyApp> {
 
   Future<bool> _init() async {
     final path = '${(await getApplicationDocumentsDirectory()).path}/${DBConfig.dbName}';
-    print(path);
     final dir = Directory(path);
 
     final dbExists = await dir.exists();

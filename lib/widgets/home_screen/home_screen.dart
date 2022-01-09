@@ -85,8 +85,6 @@ class _SearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    print(query);
-
     if (query.isEmpty) {
       return Center(
         child: Text(AppLocalizations.current.searchTermEmpty),
