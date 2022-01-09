@@ -17,21 +17,26 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int? _numberVerbs;
+  var _isLoaded = false;
+  late int _numberVerbs;
+  late Isar _isar;
 
   @override
   void initState() {
     super.initState();
 
     WidgetsBinding.instance?.addPostFrameCallback((_) async {
-      final isar = await Isar.open(
+      _isar = await Isar.open(
         schemas: [VerbSchema],
         name: DBConfig.dbName,
         directory: (await getApplicationDocumentsDirectory()).path,
       );
 
-      final verbs = await isar.verbs.where().findAll();
-      setState(() => _numberVerbs = verbs.length);
+      final verbs = await _isar.verbs.where().findAll();
+      setState(() {
+        _numberVerbs = verbs.length;
+        _isLoaded = true;
+      });
     });
   }
 
@@ -40,12 +45,81 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Спрягатель'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () => showSearch(
+              context: context,
+              delegate: _SearchDelegate(_isar),
+            ),
+          ),
+        ],
       ),
-      body: Center(
-        child: Text(
-          _numberVerbs != null ? AppLocalizations.of(context).homeScreenInfoText(_numberVerbs!) : '',
-        ),
-      ),
+      body: _isLoaded
+          ? Center(
+              child: Text(AppLocalizations.of(context).homeScreenInfoText(_numberVerbs)),
+            )
+          : const SizedBox.shrink(),
     );
   }
+}
+
+class _SearchDelegate extends SearchDelegate {
+  _SearchDelegate(Isar isar) : _isar = isar;
+
+  final Isar _isar;
+
+  @override
+  List<Widget> buildActions(BuildContext context) => [
+        IconButton(
+          icon: const Icon(Icons.clear),
+          onPressed: () => query = '',
+        ),
+      ];
+
+  @override
+  Widget buildLeading(BuildContext context) => IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () => close(context, null),
+      );
+
+  @override
+  Widget buildResults(BuildContext context) {
+    print(query);
+
+    if (query.isEmpty) {
+      return Center(
+        child: Text(AppLocalizations.current.searchTermEmpty),
+      );
+    }
+
+    return _showResults;
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) => _showResults;
+
+  Widget get _showResults => FutureBuilder(
+      future: _isar.verbs.where().filter().infinitivContains(query).build().findAll(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          final raw = snapshot.data as List<Verb>;
+          final results = raw.take(10).toList();
+
+          if (results.isEmpty) {
+            return Center(
+              child: Text(AppLocalizations.current.searchNoResultsFound),
+            );
+          }
+
+          return ListView.builder(
+            itemCount: results.length,
+            itemBuilder: (context, count) => ListTile(
+              title: Text(results[count].infinitiv),
+            ),
+          );
+        }
+
+        return const SizedBox.shrink();
+      });
 }
