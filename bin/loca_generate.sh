@@ -5,11 +5,14 @@
 dart pub global activate arb_utils
 
 # sort arbs
-pub global run arb_utils:sort assets_dev/l10n/intl_en.arb
-pub global run arb_utils:sort assets_dev/l10n/intl_de.arb
+dart pub global run arb_utils:sort assets_dev/l10n/intl_en.arb
+dart pub global run arb_utils:sort assets_dev/l10n/intl_de.arb
+
+# ensure all deps are available
+dart pub get
 
 # generate localization delegates
-flutter pub run intl_utils:generate
+dart run intl_utils:generate
 
 # format loca delegates
-flutter format lib/generated
+dart format lib/generated
