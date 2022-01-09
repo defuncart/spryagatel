@@ -3,16 +3,18 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:spryagatel/generated/l10n.dart';
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: [
+      localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.delegate.supportedLocales,
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
@@ -26,7 +28,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Спрягатель'),
+        title: const Text('Спрягатель'),
       ),
       body: Center(
         child: Text(AppLocalizations.of(context).helloWorld),
