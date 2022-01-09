@@ -92,6 +92,26 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `No results found`
+  String get searchNoResultsFound {
+    return Intl.message(
+      'No results found',
+      name: 'searchNoResultsFound',
+      desc: 'Text when no results are found',
+      args: [],
+    );
+  }
+
+  /// `Search term is empty`
+  String get searchTermEmpty {
+    return Intl.message(
+      'Search term is empty',
+      name: 'searchTermEmpty',
+      desc: 'Text when search term is empty',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

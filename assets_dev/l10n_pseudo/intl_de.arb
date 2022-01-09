@@ -15,5 +15,13 @@
   "importScreenSubheadlineText": "[Thiiis wiill rööüüghly taakee 2 miinüütees.]",
   "@importScreenSubheadlineText": {
     "description": "Sub-headline text on import screen"
+  },
+  "searchNoResultsFound": "[Nöööö reesüülts fööüünd]",
+  "@searchNoResultsFound": {
+    "description": "Text when no results are found"
+  },
+  "searchTermEmpty": "[Seeeeaaarch teerm iis eempty]",
+  "@searchTermEmpty": {
+    "description": "Text when search term is empty"
   }
 }

@@ -15,5 +15,13 @@
   "importScreenSubheadlineText": "This will roughly take 2 minutes.",
   "@importScreenSubheadlineText": {
     "description": "Sub-headline text on import screen"
+  },
+  "searchNoResultsFound": "No results found",
+  "@searchNoResultsFound": {
+    "description": "Text when no results are found"
+  },
+  "searchTermEmpty": "Search term is empty",
+  "@searchTermEmpty": {
+    "description": "Text when search term is empty"
   }
 }

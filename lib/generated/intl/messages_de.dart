@@ -31,6 +31,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "importScreenHeadlineText": MessageLookupByLibrary.simpleMessage(
             "[ẞeefööree fiirst üüsee, thee daataaßaasee neeeeds töö ßee iimpöörteed. Döö yööüü waant töö cööntinüe?]"),
         "importScreenSubheadlineText": MessageLookupByLibrary.simpleMessage(
-            "[Thiiis wiill rööüüghly taakee 2 miinüütees.]")
+            "[Thiiis wiill rööüüghly taakee 2 miinüütees.]"),
+        "searchNoResultsFound":
+            MessageLookupByLibrary.simpleMessage("[Nöööö reesüülts fööüünd]"),
+        "searchTermEmpty": MessageLookupByLibrary.simpleMessage(
+            "[Seeeeaaarch teerm iis eempty]")
       };
 }

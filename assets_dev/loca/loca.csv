@@ -3,3 +3,5 @@ importScreenHeadlineText;Headline text on import screen;Before first use, the da
 importScreenSubheadlineText;Sub-headline text on import screen;This will roughly take 2 minutes.;
 importScreenButtonText;Import button text on import screen;Import;
 homeScreenInfoText;Info text;{count, plural, zero{There are no verbs} one{There is 1 verb} other{There are {count} verbs}};
+searchNoResultsFound;Text when no results are found;No results found;
+searchTermEmpty;Text when search term is empty;Search term is empty;

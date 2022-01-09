@@ -31,6 +31,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "importScreenHeadlineText": MessageLookupByLibrary.simpleMessage(
             "Before first use, the database needs to be imported. Do you want to continue?"),
         "importScreenSubheadlineText": MessageLookupByLibrary.simpleMessage(
-            "This will roughly take 2 minutes.")
+            "This will roughly take 2 minutes."),
+        "searchNoResultsFound":
+            MessageLookupByLibrary.simpleMessage("No results found"),
+        "searchTermEmpty":
+            MessageLookupByLibrary.simpleMessage("Search term is empty")
       };
 }
